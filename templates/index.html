@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đề xuất phim</title>
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/jumbotron/" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180" />
+    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png" />
+    <link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json" />
+    <link rel="mask-icon" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3" />
+    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico" />
+    <style>
+        * {
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-family: Arial, Helvetica, sans-serif;
+            /* background: url("/assets/img/pixel-heart.png") ; */
+        }
+        
+        .container-fluid {
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .slider {
+            position: relative;
+            /* margin-top: 46px; */
+            padding-top: 50%;
+            background: url("https://store-images.s-microsoft.com/image/apps.47842.9007199266246365.2a2d31fe-dc82-41b6-9774-9ce54b027860.e16db4e0-8f09-444d-8119-15dc01401ba2?mode=scale&q=90&h=1080&w=1920");
+            /* max-width: fit-content; */
+        }
+        
+        #header {
+            /* position: fixed; */
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 46px;
+            background-color: black;
+        }
+        
+        #nav {
+            display: inline-block;
+        }
+        
+        #nav>li:hover>a {
+            background-color: #ccc;
+            color: black;
+        }
+        
+        #nav>li>a {
+            color: white;
+        }
+        
+        #nav li a {
+            line-height: 46px;
+            text-decoration: none;
+            display: block;
+            padding: 0 24px;
+        }
+        
+        #nav>li {
+            display: inline-block;
+        }
+        
+        #nav li {
+            position: relative;
+        }
+        
+        .content h3 {
+            size: 20px;
+            color: rgb(0, 0, 0);
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+        
+        .predicted {
+            border: 2px #b5252a solid;
+        }
+        /*.bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }*/
+        
+        .btn-primary {
+            color: #fff;
+            padding: 15px 30px;
+            /* text-align: center; */
+            /* text-decoration: none; */
+            /* size: 300px; */
+            background-color: #bd323f;
+            border-color: #0a3303;
+        }
+    </style>
+    <meta name="theme-color" content="#7952b3" />
+</head>
+
+<body>
+    <main>
+        <div>
+            <div id="header">
+                <ul id="nav">
+                    <li><a>Trang chủ</a></li>
+                    <li><a>Xếp hạng</a></li>
+                    <li><a>Thể loại</a></li>
+                    <li><a>Quốc gia</a></li>
+                    <li><a>Khác</a></li>
+
+                </ul>
+                <div class="search-btn">
+                    <i class="search-icon ti-search"></i>
+                </div>
+            </div>
+            <div class="contain">
+                <div class="">
+                    <div class="container-fluid">
+                        <h1>Công cụ đề xuất phim cho bạn</h1>
+
+                        <div class="slider">
+                            <h6>Diem</h6>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="content">
+                    <h3>Đánh giá các bộ phim dưới đây và chúng tôi sẽ dự đoán xếp hạng cho bộ phim còn lại </h3>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="card" id="rom-container">
+                            <img src="http://d1j8r0kxyu9tj8.cloudfront.net/files/1618301042CTBAF7i4v3cXFfn.jpg" class="card-img-top" style="
+                                max-height: 300px;
+                                width: auto;
+                                object-fit: cover;
+                                object-position: top;
+                            " alt="..." />
+                            <div class="card-body">
+                                <h5 class="card-title">Ròm</h5>
+                                <select class="form-select" id="rom" aria-label="Default select example">
+                                <option value="0" selected>Đánh giá phim</option>
+                                <option value="1">1 star</option>
+                                <option value="2">2 star</option>
+                                <option value="3">3 star</option>
+                                <option value="4">4 star</option>
+                                <option value="5">5 star</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" id="bogia-container">
+                            <img src="https://vcdn-giaitri.vnecdn.net/2020/12/02/bo-gia-2-5597-1606902706.jpg" class="card-img-top" style="
+                                max-height: 300px;
+                                width: auto;
+                                object-fit: cover;
+                                object-position: top;
+                            " alt="..." />
+                            <div class="card-body">
+                                <h5 class="card-title">Bố Già</h5>
+                                <select class="form-select" id="bogia" aria-label="Default select example">
+                                <option value="0" selected>Đánh giá phim</option>
+                                <option value="1">1 star</option>
+                                <option value="2">2 star</option>
+                                <option value="3">3 star</option>
+                                <option value="4">4 star</option>
+                                <option value="5">5 star</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" id="haiphuong-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/vi/4/41/Hai_Phuong_-_Furie_poster.jpg" class="card-img-top" style="
+                            max-height: 300px;
+                            width: auto;
+                            object-fit: cover;
+                            object-position: top;
+                          " alt="..." />
+                            <div class="card-body">
+                                <h5 class="card-title">Hai Phượng</h5>
+                                <select class="form-select" id="haiphuong" aria-label="Default select example">
+                                <option value="0" selected>Đánh giá phim</option>
+                                <option value="1">1 star</option>
+                                <option value="2">2 star</option>
+                                <option value="3">3 star</option>
+                                <option value="4">4 star</option>
+                                <option value="5">5 star</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card" id="matbiec-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/vi/4/42/%C3%81p_ph%C3%ADch_phim_M%E1%BA%AFt_bi%E1%BA%BFc.jpg" class="card-img-top" style="
+                                max-height: 300px;
+                                width: auto;
+                                object-fit: cover;
+                                object-position: top;
+                            " alt="..." />
+                            <div class="card-body">
+                                <h5 class="card-title">Mắt Biếc</h5>
+                                <select class="form-select" id="matbiec" aria-label="Default select example">
+                                <option value="0" selected>Đánh giá phim</option>
+                                <option value="1">1 star</option>
+                                <option value="2">2 star</option>
+                                <option value="3">3 star</option>
+                                <option value="4">4 star</option>
+                                <option value="5">5 star</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card" id="tamcam-container">
+                            <img src="https://cand.com.vn/Files/Image/ngochoa/2016/08/19/1fd29501-0884-4ae0-8e76-791ee8b58bf1.jpg" class="card-img-top" style="
+                                max-height: 300px;
+                                width: auto;
+                                object-fit: cover;
+                                object-position: top;
+                            " alt="..." />
+                            <div class="card-body">
+                                <h5 class="card-title">Tấm Cám</h5>
+                                <select class="form-select" id="tamcam" aria-label="Default select example">
+                                <option value="0" selected>Đánh giá phim</option>
+                                <option value="1">1 star</option>
+                                <option value="2">2 star</option>
+                                <option value="3">3 star</option>
+                                <option value="4">4 star</option>
+                                <option value="5">5 star</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <p id="error"></p>
+                        <button class="btn-primary" id="predict-btn" type="button">
+                          Dự đoán
+                        </button>
+                    </div>
+                </div>
+                <p>Request:</p>
+                <pre id="request"></pre>
+
+                <p>Response:</p>
+                <pre id="response"></pre>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $("#predict-btn").click(function() {
+            const keyMaps = {
+                "Ròm": "rom",
+                "Bố Già": "bogia",
+                "Hai Phượng": "haiphuong",
+                "Mắt Biếc": "matbiec",
+                "Tấm Cám": "tamcam",
+            };
+            const romVal = $("select#rom").val();
+            const boGiaVal = $("select#bogia").val();
+            const haiPhuongVal = $("select#haiphuong").val();
+            const matBiecVal = $("select#matbiec").val();
+            const tamCamVal = $("select#tamcam").val();
+            const allMovieRatings = [{
+                item: "Ròm",
+                rating: romVal
+            }, {
+                item: "Bố Già",
+                rating: boGiaVal
+            }, {
+                item: "Hai Phượng",
+                rating: haiPhuongVal
+            }, {
+                item: "Mắt Biếc",
+                rating: matBiecVal
+            }, {
+                item: "Tấm Cám",
+                rating: tamCamVal
+            }];
+
+            const rated_movies = allMovieRatings.filter((e) => e.rating > 0);
+            const items_to_predict = allMovieRatings
+                .filter((e) => e.rating <= 0)
+                .map((e) => e.item);
+
+            if (rated_movies.length !== 4) {
+                $("#error").text("Vui lòng đánh giá chính xác 4 bộ phim");
+                return;
+
+            } else {
+                $("#error").text("");
+            }
+
+            const items = rated_movies.map((e) => e.item);
+            const ratings = rated_movies.map((e) => e.rating);
+
+            const user = "Sample user"
+            const users = [user, user, user, user];
+
+            const requestText = {
+                users,
+                items,
+                ratings,
+                items_to_predict,
+            };
+            $("#request").text(
+                "POST /query \n\n" + JSON.stringify(requestText, null, 2)
+            );
+
+            $.ajax({
+                method: "POST",
+                url: "http://127.0.0.1:5000/query/",
+                data: {
+                    users,
+                    items,
+                    ratings,
+                    items_to_predict
+                },
+                success: function(data) {
+                    $("#" + keyMaps[data[0][1]]).val(Math.round(data[0][3]).toString());
+                    $("#" + keyMaps[data[0][1]] + "-container").addClass("predicted");
+
+                    $("#response").text(JSON.stringify(data[0], null, 2));
+                },
+                error: function(data) {
+                    console.log(data);
+                },
+            });
+
+        });
+    </script>
+</body>
+
+</html>
